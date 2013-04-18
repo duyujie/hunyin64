@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedWebClassLibrary", "..\SharedWebClassLibrary\SharedWebClassLibrary.csproj", "{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "hunyin64", ".", "{28738CED-FBFF-4B13-ABC1-EADD1FD2EFAA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		ProjectReferences = "{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}|SharedWebClassLibrary.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/hunyin64"
+		Debug.AspNetCompiler.PhysicalPath = "..\hunyin64\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\hunyin64\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/hunyin64"
+		Release.AspNetCompiler.PhysicalPath = "..\hunyin64\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\hunyin64\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "11077"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{F346220C-CFC7-4A9B-AA3E-A659D82AE60E} = {F346220C-CFC7-4A9B-AA3E-A659D82AE60E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		R|Any CPU = R|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}.R|Any CPU.ActiveCfg = R|Any CPU
+		{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}.R|Any CPU.Build.0 = R|Any CPU
+		{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F346220C-CFC7-4A9B-AA3E-A659D82AE60E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28738CED-FBFF-4B13-ABC1-EADD1FD2EFAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28738CED-FBFF-4B13-ABC1-EADD1FD2EFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28738CED-FBFF-4B13-ABC1-EADD1FD2EFAA}.R|Any CPU.ActiveCfg = Debug|Any CPU
+		{28738CED-FBFF-4B13-ABC1-EADD1FD2EFAA}.R|Any CPU.Build.0 = Debug|Any CPU
+		{28738CED-FBFF-4B13-ABC1-EADD1FD2EFAA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{28738CED-FBFF-4B13-ABC1-EADD1FD2EFAA}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
