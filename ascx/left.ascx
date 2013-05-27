@@ -9,7 +9,7 @@
         </tr>
         <tr>
             <td>
-                <table id="Lawyer1" style="width: 100%; display: none;">
+                <table id="Lawyer1" style="width: 100%;">
                     <tr>
                         <td style="width: 133px" rowspan="2">
                             <img border="0" src="<%=Total.ImgProfileUrl %>" width="134" height="172">
@@ -37,7 +37,7 @@
                         </td>
                     </tr>
                 </table>
-                <table id="Lawyer2" style="width: 100%;  ">
+                <table id="Lawyer2" style="width: 100%;  display: none; ">
                     <tr>
                         <td style="width: 133px" rowspan="2">
                             <img border="0" src="images/gk.png" width="134" height="172">
