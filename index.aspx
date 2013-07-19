@@ -12,8 +12,8 @@
     <meta http-equiv="Content-Language" content="zh-cn">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>
-        <%= "首页" + Total.Title%></title>
-    <meta name="keywords" content="离婚协议,婚姻法律师,离婚法律咨询,离婚财产分割,涉外婚姻,遗产继承">
+        <%= Total.Title%></title>
+    <meta name="keywords" content="<%=Total.Keywords%>">
     <meta name="description" content="<%=officeDesc %>">
     <link type="text/css" href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/orbit-1.2.3.css">

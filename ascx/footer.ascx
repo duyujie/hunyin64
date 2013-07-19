@@ -1,10 +1,9 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="com.hujun64.footer" CodeFile="footer.ascx.cs" %>
- 
 <%@ Register TagPrefix="uc1" TagName="track" Src="track.ascx" %>
 <div align="center">
     <table border="0" cellpadding="0" cellspacing="0" width="950" id="table1">
         <tr>
-            <td height="200"   valign="top" style="padding: 20px;">
+            <td height="200" valign="top" style="padding: 20px;">
                 <div align="center" class="Content">
                     <table border="0" cellpadding="4" cellspacing="0" width="910" id="table2">
                         <tr>
@@ -30,8 +29,33 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <b>联系电话：</b><span style="font-size: 16px;"><strong>13636542941</strong></span><br>
-                                                <b>E-Mail： &nbsp; </b>hujun64@gmail.com
+                                                <table>
+                                                    <tr>
+                                                        <td align="right">
+                                                            <b>电话：</b>
+                                                        </td>
+                                                        <td>
+                                                            <span style="font-size: 16px;"><strong>
+                                                                <%=Total.Mobile %></strong></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right">
+                                                            E-Mail：
+                                                        </td>
+                                                        <td>
+                                                            <%=Total.Email %>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right">
+                                                            QQ:
+                                                        </td>
+                                                        <td>
+                                                            <%=Total.Qq %>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </td>
                                         </tr>
                                     </table>
@@ -57,38 +81,67 @@
                                 <strong>友情链接</strong>
                             </td>
                         </tr>
-                         <tr>
-                        <td width="840" colspan="2" align="left">
-                            <asp:Repeater ID="RepeaterLink" runat="server">
-                                <ItemTemplate>
-                                    &nbsp;&nbsp; <a href="<%# Eval("link_site_url") %>" title="<%# Eval("link_description") %>"
-                                        target="_blank" class="myLink">
-                                        <%#Eval("link_site_name")%>
-                                    </a>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </td>
-                        <td align="right" width="120">
-                          &nbsp;&nbsp;&nbsp;  <a href="linkapp.aspx" target="_blank" class="more">申请友情链接&gt;&gt;</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td width="840" colspan="2" align="left">
+                                <asp:Repeater ID="RepeaterLink" runat="server">
+                                    <ItemTemplate>
+                                        &nbsp;&nbsp; <a href="<%# Eval("link_site_url") %>" title="<%# Eval("link_description") %>"
+                                            target="_blank" class="myLink">
+                                            <%#Eval("link_site_name")%>
+                                        </a>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </td>
+                            <td align="right" width="120">
+                                &nbsp;&nbsp;&nbsp; <a href="linkapp.aspx" target="_blank" class="more">申请友情链接&gt;&gt;</a>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-            <td height="100"  class="Footer" align="right" style="padding-right: 10px; background-image:url(images/greenBg.jpg)">
-                <strong>Copyright @ Hunyin64.com&nbsp; <%=Total.SiteName %><br>                     
-                    电话：13636542941<br>
-                    联系地址：上海市闸北区恒丰路500号洲际商务中心16楼<br />
-                    <%--盈科(上海)律师事务所<br />--%>
-                    备案号：沪ICP备09011496号</strong>
-                    
+            <td height="100" class="Footer" align="right" style="padding-right: 10px; background-image: url(images/greenBg.jpg)">
+                <strong>Copyright @ hunyin64.com&nbsp;
+                    <%=Total.SiteName %>
+                    &nbsp; www.hunyin64.com</strong><br />
+                <table>
+                    <tr>
+                        <td align="right">
+                            电话：
+                        </td>
+                        <td>
+                            <%=Total.Mobile%>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            地址：
+                        </td>
+                        <td>
+                            上海市闸北区恒丰路500号洲际商务中心16楼
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            盈科(上海)律师事务所
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            备案号：
+                        </td>
+                        <td>
+                            沪ICP备09011496号
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
     </table>
 </div>
 <div align="center">
-
-<uc1:track ID="track" runat="server"></uc1:track>
+    <uc1:track ID="track" runat="server"></uc1:track>
 </div>

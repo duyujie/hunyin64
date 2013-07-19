@@ -1,8 +1,8 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="com.hujun64.top" CodeFile="top.ascx.cs" %>
-<%@ OutputCache Duration="60000" VaryByParam="*" Shared="True" %>
+ 
  
 
-<div class="DivContainer">
+ <div align="center">
     <table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
         <tr> 
             <td height="80" style=" background-image:url(images/greenBg.jpg)">
