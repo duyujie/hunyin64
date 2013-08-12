@@ -1,4 +1,4 @@
-<%@ Page Language="c#" Inherits="com.hujun64.news_show" CodeFile="news_show.aspx.cs"
+<%@ Page Language="c#" Inherits="com.hujun64.img_show" CodeFile="img_show.aspx.cs"
     CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" %>
 
 <%@ Register TagPrefix="uc1" TagName="header" Src="ascx/header.ascx" %>
@@ -8,16 +8,15 @@
 <%@ Register TagPrefix="uc1" TagName="track" Src="ascx/track.ascx" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>
+<!--head区开始位置-->
 <head runat="server">
-    <meta http-equiv="Content-Language" content="zh-cn">
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-    <meta name="keywords" content="<%= articleKeywords +""%>">
-    <meta name="description" content="<% = metaDescription +""%>">
-    <link type="text/css" href="css/style.css" rel="stylesheet" />
-    <uc1:header ID="header1" runat="server"></uc1:header>
+    <uc1:header ID="Head2" runat="server"></uc1:header>
+    <meta name="Keywords" content="<%= articleKeywords+"|"+Total.Keywords%>" />
     <title>
-        <%=  title + "_" + Total.Title%></title>
+        <%=  title + "_" + Total.Title%>
+    </title>
 </head>
+<!--head区结束--位置-->
 <body>
     <form id="bodyForm" runat="server">
     <div align="center">
@@ -33,9 +32,6 @@
                                     <div align="center">
                                         <table border="0" cellpadding="0" cellspacing="0" width="940" id="table10" height="100%">
                                             <tr>
-                                                <td width="327" valign="top" style="padding-top: 10px;">
-                                                    <uc1:left ID="left" runat="server"></uc1:left>
-                                                </td>
                                                 <td valign="top" style="padding-top: 10px;" align="left">
                                                     <asp:Repeater ID="RepeaterNews" runat="server">
                                                         <ItemTemplate>
@@ -62,7 +58,7 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td style="padding-top: 20px; background-image: url(Images/ShortLine.jpg); background-repeat: no-repeat;">
+                                                                    <td height="440px" style="vertical-align: top">
                                                                         <%=imgUrl%>
                                                                         <br />
                                                                         <%#Eval("content")%>

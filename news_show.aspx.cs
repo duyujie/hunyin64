@@ -14,8 +14,8 @@ namespace com.hujun64
     /// </summary>
     public partial class news_show : PageBase
     {
-        
-        protected string title = "";
+
+        protected string title = "", imgUrl="";
         protected string articleKeywords = "";
         protected string metaDescription = "";
 
@@ -85,6 +85,11 @@ namespace com.hujun64
                 }else
                  
                 {
+                    if (article != null && string.IsNullOrEmpty(article.content) && article.articlePicture != null)
+                    {
+                        Response.Redirect("img_show.aspx?" + Total.QueryStringArticleId + "=" + articleId, true);
+                        return;
+                    }
 
                     this.moduleClassName = classService.GetClassById(article.module_class_id).class_name;
 
@@ -109,6 +114,10 @@ namespace com.hujun64
                     metaDescription = UtilHtml.ExtractMetaDesc(article);
 
                     myLocation = UtilHtml.GetPageInfo(article.big_class_id, article.class_id, article.module_class_id).locationHref;
+                    if (article.articlePicture != null)
+                    {
+                        imgUrl = UtilHtml.GetFullImageUrl(article.articlePicture.pic_url, article.articlePicture.pic_alt);
+                    }
 
                     List<Article> articleList = new List<Article>(1);
                     articleList.Add(article);

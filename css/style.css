@@ -289,7 +289,7 @@ td.IntroTitle a:hover
     background-position: top;
 }
 
-td.ModuleTitle
+.ModuleTitle
 {
     font-family: Arial;
     font-size: 11pt;
@@ -297,7 +297,7 @@ td.ModuleTitle
     line-height: 120%;
     text-align: left;
 }
-td.ModuleTitle a:link
+.ModuleTitle a:link
 {
     font-family: Arial;
     font-size: 11pt;
@@ -306,7 +306,7 @@ td.ModuleTitle a:link
     line-height: 120%;
     text-align: left;
 }
-td.ModuleTitle a:visited
+.ModuleTitle a:visited
 {
     font-family: Arial;
     font-size: 11pt;
@@ -315,7 +315,7 @@ td.ModuleTitle a:visited
     line-height: 120%;
     text-align: left;
 }
-td.ModuleTitle a:hover
+.ModuleTitle a:hover
 {
     font-family: Arial;
     font-size: 11pt;
@@ -444,4 +444,32 @@ a:visited.e
     font-weight: normal;
     color: #045801;
     text-decoration: none;
+}
+
+
+.pdfClass{float: left; margin-right: 15px;   }
+
+.pdfClass a:link
+{
+    font-family: Arial;
+    font-size: 10pt;
+    color: #045801;
+    text-decoration: none;
+    line-height: 120%;
+}
+.pdfClass a:visited
+{
+    font-family: Arial;
+    font-size: 10pt;
+    color:  #045801;
+    text-decoration: none;
+    line-height: 120%;
+}
+.pdfClass a:hover
+{
+    font-family: Arial;
+    font-size: 10pt;
+    color: red;
+    text-decoration: none;
+    line-height: 120%;
 }

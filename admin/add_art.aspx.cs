@@ -1,6 +1,9 @@
 using System;
+using System.IO;
 using System.Text;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using com.hujun64.logic;
@@ -87,23 +90,65 @@ namespace com.hujun64.admin
                 try
                 {
                     string filename = UtilString.GetPureFilename(imgFile.PostedFile.FileName);
+                    bool isFzb = false;
+                    if (this.moduleClassList.SelectedItem.Text.Contains("法治报"))
+                    {
+                        isFzb = true;
+                        IMG_UPLOAD_PATH = @"~\pdf\";
+                        if (!filename.ToLower().EndsWith(".pdf"))
+                        {
+                            Response.Write("<script>javascript:alert('法治报 版块必须上传PDF格式文件！');</script>");
+                            refImgUrl.Text = "";
+                            return;
+                        }
+                    }
 
                     StringBuilder destFilepathSb = new StringBuilder(IMG_UPLOAD_PATH);
 
 
                     destFilepathSb.Append(filename);
                     string destFullpath = Server.MapPath(destFilepathSb.ToString());
-                    refImgUrl.Text = destFilepathSb.Replace(@"~\", Total.CurrentSiteRootUrl).Replace(@"\", "/").ToString();
+
 
                     imgFile.PostedFile.SaveAs(destFullpath);
 
+                    if (isFzb)
+                    {
+                        string pdfImgDir = destFullpath.Replace(filename, "");
+                        string pdfImgFilename = filename.ToLower().Replace(".pdf", "");
 
-                    Response.Write("<script>javascript:alert('相关图片上传成功！');</script>");
-                    MSG.Text = "<font color=red>相关图片上传成功！</font>";
+                        IList<string> imgFileList = UtilFile.ConvertPDF2Image(destFullpath, pdfImgDir, pdfImgFilename, 1, 1, ImageFormat.Jpeg, UtilFile.Definition.One);
+
+                        if (imgFileList != null && imgFileList.Count > 0)
+                        {
+                            string jpgFilename = destFullpath.ToLower().Replace(".pdf", ".jpg");
+                            string smallFilename = jpgFilename + ".jpg";
+                            if (File.Exists(smallFilename))
+                                File.Delete(smallFilename);
+                            File.Move(imgFileList[0], smallFilename);
+                            UtilFile.ConvertPDF2Image(destFullpath, pdfImgDir, pdfImgFilename, 1, 1, ImageFormat.Jpeg, UtilFile.Definition.Four);
+
+                            if (File.Exists(jpgFilename))
+                                File.Delete(jpgFilename);
+                            File.Move(imgFileList[0], jpgFilename);
+                            destFilepathSb = new StringBuilder(IMG_UPLOAD_PATH);
+                            destFilepathSb.Append(UtilString.GetPureFilename(jpgFilename));
+                            uploadImgUrl = "../" + destFilepathSb.Replace(@"~\", "").Replace(@"\", "/").ToString() + ".jpg";
+                        }
+
+                    }
+
+                    refImgUrl.Text = destFilepathSb.Replace(@"~\", "").Replace(@"\", "/").ToString();
+
+
+
+                    Response.Write("<script>javascript:alert('相关文件上传成功！');</script>");
+                    MSG.Text = "<font color=red>相关文件上传成功！</font>";
 
                 }
                 catch (Exception ex)
                 {
+                    Response.Write("<script>javascript:alert('" + ex.Message + "');</script>");
                     MSG.Text = "<font color=red>" + ex.Message + "</font>";
                 }
 
@@ -404,7 +449,7 @@ namespace com.hujun64.admin
             }
             else
 
-                if (arttitle.Text.Trim() != "" && ContentEditor.Text != "")
+                if ((this.moduleClassList.SelectedItem.Text.Contains("法治报") && !string.IsNullOrEmpty(uploadImgUrl) &&  arttitle.Text.Trim() != "") || (arttitle.Text.Trim() != "" && ContentEditor.Text != ""))
                 {
                     Article article;
                     try
@@ -431,7 +476,10 @@ namespace com.hujun64.admin
 
                         setArticleClass(article);
                         article.site_list = siteIdList;
-                        article.content = UtilHtml.FormatArticleContent(ContentEditor.Text, isStandard);
+                        if (!string.IsNullOrEmpty(ContentEditor.Text))
+                            article.content = UtilHtml.FormatArticleContent(ContentEditor.Text, isStandard);
+                        else
+                            article.content = "";
 
 
 
@@ -466,9 +514,7 @@ namespace com.hujun64.admin
                             articleService.UpdateArticle(article);
                             ContentEditor.Text = article.content;
 
-                            //异步更新网站
-                            AsyncTaskService.UpdateSiteAsync(RefreshType.ONLY_CHANGED);
-                            AsyncTaskService.PostArticle2ShfclawyerAsync(article);
+                          
                             MSG.Text = "更新成功！";
 
 
@@ -493,18 +539,15 @@ namespace com.hujun64.admin
 
                             articleService.InsertArticle(article);
 
-                            //异步更新网站
-                            AsyncTaskService.UpdateSiteAsync(RefreshType.ONLY_CHANGED);
-                            //AsyncTaskService.PostArticle2ShfclawyerAsync(article);
+                          
                             MSG.Text = "添加成功！";
 
                             resetForm();
 
                         }
-                        articleService.RefreshCachedArticle();
 
                         //更新搜索索引
-                        LuceneSearcher.WriteIndex(article,false);
+                        //LuceneSearcher.WriteIndex(article,false);
 
                         article = articleService.GetArticle(article.id, false);
                         Response.Write("<script>javascript:if(confirm('操作成功！是否浏览该文章？')){window.open('../" + UtilHtml.GetAspxUrl(article.id, article.page_type) + "');}</script>");

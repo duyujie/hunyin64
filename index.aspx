@@ -6,6 +6,7 @@
 <%@ Register TagPrefix="uc1" TagName="left" Src="ascx/left.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="footer" Src="ascx/footer.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="track" Src="ascx/track.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="fzb" Src="ascx/fzb.ascx" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
@@ -506,7 +507,18 @@
             </tr>
         </table>
     </div>
+   
+   
+    <div align="center">
+        <uc1:fzb ID="fzb" runat="server"></uc1:fzb>
+    </div>
+    
+     <div>
     <uc1:footer ID="footer" runat="server" />
+    </div>
+
+
+    
 </body>
 </html>
 <script>
