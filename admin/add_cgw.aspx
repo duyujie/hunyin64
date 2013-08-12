@@ -7,10 +7,7 @@
 <head id="Head1" runat="server">
     <title>添加/更新文章</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1" />
-    <meta name="CODE_LANGUAGE" content="C#" />
-    <meta name="vs_defaultClientScript" content="JavaScript" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <link href="../css/admin.css" rel="stylesheet" rev="stylesheet" type="text/css" />
     <meta name="robots" content="noindex,follow" />
     <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
 

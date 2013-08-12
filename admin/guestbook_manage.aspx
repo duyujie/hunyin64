@@ -2,20 +2,18 @@
     ValidateRequest="false" %>
 <%@ Register TagPrefix="webdiyer" Namespace="Wuqi.Webdiyer" Assembly="AspNetPager" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD html 4.0 Transitional//EN" >
-<link href="../css/style.css" rel="stylesheet" rev="stylesheet" type="text/css" />
+
 <html>
 <head>
     <title>留言管理</title>
-    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1" />
-    <meta name="CODE_LANGUAGE" content="C#" />
-    <meta name="vs_defaultClientScript" content="JavaScript" />
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
     <meta name="robots" content="noindex,follow"/>
+    <link href="../css/admin.css" rel="stylesheet" rev="stylesheet" type="text/css" />
+    
 </head>
 <body>
     <form id="FormAsk" method="post" runat="server">
     
-        <table id="Table1" cellspacing="0" cellpadding="0" width="1100" align="center" border="1">
+        <table id="Table1" cellspacing="0" cellpadding="0" width="1100px" align="center" border="1">
             
             <tbody>
                 <tr>
@@ -27,12 +25,13 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="3"  > 
+                   
                         <asp:DataGrid ID="DataGridTitle" runat="server" Width="100%" AutoGenerateColumns="False"
                             DataKeyField="id" OnSelectedIndexChanged="DataGrid1_SelectedIndexChanged" HeaderStyle-Font-Bold="true">
                             <Columns>
-                                <asp:BoundColumn  DataField="id" HeaderText="ID" ItemStyle-ForeColor="Blue"></asp:BoundColumn>
-                                <asp:BoundColumn DataField="title" HeaderText="标题"></asp:BoundColumn>                                
+                                <asp:BoundColumn  DataField="id" HeaderText="ID" ItemStyle-ForeColor="Blue" ItemStyle-Width="30px"></asp:BoundColumn>
+                                <asp:BoundColumn DataField="title" HeaderText="标题" ></asp:BoundColumn>                                
                                 <asp:BoundColumn DataField="author" HeaderText="咨询者" ItemStyle-Width="100px"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="province_from" HeaderText="地域" ItemStyle-Width="150px">
                                 </asp:BoundColumn>
@@ -42,9 +41,10 @@
                                 <asp:BoundColumn DataField="is_replied" HeaderText="回复" ItemStyle-Width="30px"></asp:BoundColumn>
                                 <asp:ButtonColumn Text="选择" HeaderText="查看" CommandName="Select" ItemStyle-Width="30px">
                                 </asp:ButtonColumn>
-                                <asp:ButtonColumn Text="删除" CommandName="Delete" ItemStyle-Width="30px"></asp:ButtonColumn>
+                                <asp:ButtonColumn Text="删除" CommandName="Delete" ItemStyle-Width="50px"></asp:ButtonColumn>
                             </Columns>
                         </asp:DataGrid>
+                       
                     </td>
                 </tr>
             </tbody>

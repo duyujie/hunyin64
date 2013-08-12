@@ -5,10 +5,7 @@
 <head>
     <title>后台管理登陆</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR" />
-    <meta content="C#" name="CODE_LANGUAGE" />
-    <meta content="JavaScript" name="vs_defaultClientScript" />
-    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+   <link href="../css/admin.css" rel="stylesheet" rev="stylesheet" type="text/css" />
     <meta name="robots" content="noindex,follow" />
 </head>
 <body>

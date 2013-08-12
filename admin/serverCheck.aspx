@@ -6,9 +6,9 @@
 <head>
     <title>后台管理</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+     <link href="../css/admin.css" rel="stylesheet" rev="stylesheet" type="text/css" />
     <meta name="robots" content="noindex,follow"/>
-    <style type="text/css">
-        </style>
+    
 </head>
 <body topmargin="0">
     <div align="center">
