@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="c#" Inherits="com.hujun64.guestask" CodeFile="guestask.aspx.cs"
-    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" EnableViewStateMac="false" %>
+    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" EnableViewStateMac="false"
+    EnableEventValidation="False" ViewStateEncryptionMode="Never" %>
 
 <%@ Register TagPrefix="webdiyer" Namespace="Wuqi.Webdiyer" Assembly="AspNetPager" %>
 <%@ Register TagPrefix="uc1" TagName="header" Src="ascx/header.ascx" %>
@@ -11,14 +12,17 @@
 <html>
 <!--head区开始位置-->
 <head id="Head1" runat="server">
-<meta http-equiv="Content-Language" content="zh-cn">
+    <meta http-equiv="Content-Language" content="zh-cn">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link type="text/css" href="css/style.css" rel="stylesheet" />
     <uc1:header ID="header1" runat="server"></uc1:header>
-     <title><%=  "在线留言咨询_" + Total.Title%></title>
+    <title>
+        <%=  "在线留言咨询_" + Total.Title%></title>
 </head>
 <!--head区结束--位置-->
-<body>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0"
+    marginheight="0" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+    onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
     <form id="bodyForm" runat="server">
     <div align="center">
         <table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
@@ -120,7 +124,6 @@
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>
-                                                                    
                                                                     <tbody>
                                                                         <tr>
                                                                             <td width="120px" align="right">
@@ -207,8 +210,7 @@
                 </td>
             </tr>
         </table>
-        <uc1:footer ID="footer" runat="server" />
     </form>
+    <uc1:footer ID="footer" runat="server" />
 </body>
-
 </html>

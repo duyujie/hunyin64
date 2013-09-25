@@ -12,7 +12,9 @@
     <title>错误信息 </title>
 </head>
 <!--head区结束--位置-->
-<body>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0"
+    marginheight="0" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+    onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
     <form id="bodyForm" runat="server">
     <table cellpadding="0" cellspacing="0" class="twidth" align="center">
         <tr height="500px" valign="top">

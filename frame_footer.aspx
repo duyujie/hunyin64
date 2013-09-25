@@ -1,5 +1,6 @@
 <%@ Page Language="c#" Inherits="com.hujun64.frame_footer" CodeFile="frame_footer.aspx.cs"
-    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" %>
+    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false"  EnableEventValidation="False"
+    ViewStateEncryptionMode="Never" %>
     <%@ Register TagPrefix="uc1" TagName="footer" Src="ascx/footer.ascx" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>

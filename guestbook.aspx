@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="c#" Inherits="com.hujun64.guestbook" CodeFile="guestbook.aspx.cs"
-    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" %>
+    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" EnableEventValidation="False"
+    ViewStateEncryptionMode="Never" %>
 
 <%@ Register TagPrefix="webdiyer" Namespace="Wuqi.Webdiyer" Assembly="AspNetPager" %>
 <%@ Register TagPrefix="uc1" TagName="header" Src="ascx/header.ascx" %>
@@ -17,7 +18,9 @@
     <title>
         <%= "在线咨询_" + Total.Title%></title>
 </head>
-<body>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0"
+    marginheight="0" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+    onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
     <form id="bodyForm" runat="server">
     <div align="center">
         <table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
@@ -40,7 +43,7 @@
                                                         <tr>
                                                             <td class="ModuleTitle" height="40" colspan="4">
                                                                 <div style="float: left; margin-left: 10px">
-                                                                    <a href="guestask.aspx" target="_blank" style=" font:16px"><strong>
+                                                                    <a href="guestask.aspx" target="_blank" style="font: 16px"><strong>
                                                                         <%=moduleClassName %></strong> </a>
                                                                 </div>
                                                                 <div style="float: left; margin-left: 50px">
@@ -61,8 +64,7 @@
                                                                                 </td>
                                                                                 <td style="width: 468px; height: 26px;">
                                                                                     <a href="guestbook_show.aspx?<%# Total.QueryStringGuestbookId %>=<%# Eval("id") %>"
-                                                                                        title="<%#UtilHtml.RemoveHtmlTag(Eval("title").ToString(),true)%>"
-                                                                                        target="_blank">
+                                                                                        title="<%#UtilHtml.RemoveHtmlTag(Eval("title").ToString(),true)%>" target="_blank">
                                                                                         <%# UtilHtml.RemoveHtmlTag(Eval("title").ToString(), true)%><%#UtilHtml.GetImageOfNewArticle(Eval("id").ToString(),(DateTime)Eval("addtime")) %>
                                                                                     </a>
                                                                                 </td>
@@ -97,7 +99,8 @@
                 </td>
             </tr>
         </table>
-        <uc1:footer ID="footer" runat="server" />
+    </div>
     </form>
+    <uc1:footer ID="footer" runat="server" />
 </body>
 </html>

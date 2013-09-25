@@ -1,20 +1,19 @@
 <%@ Page Language="c#" Inherits="com.hujun64.admin.guestbook_manage" CodeFile="guestbook_manage.aspx.cs"
     ValidateRequest="false" %>
+
 <%@ Register TagPrefix="webdiyer" Namespace="Wuqi.Webdiyer" Assembly="AspNetPager" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD html 4.0 Transitional//EN" >
-
 <html>
 <head>
     <title>留言管理</title>
-    <meta name="robots" content="noindex,follow"/>
+    <meta name="robots" content="noindex,follow" />
     <link href="../css/admin.css" rel="stylesheet" rev="stylesheet" type="text/css" />
-    
 </head>
 <body>
     <form id="FormAsk" method="post" runat="server">
-    
-        <table id="Table1" cellspacing="0" cellpadding="0" width="1100px" align="center" border="1">
-            
+    <div align="center">
+        <table id="Table1" cellspacing="0" cellpadding="0" width="1100px"  align="left" border="1" style="margin-left:100px"
+            border="1">
             <tbody>
                 <tr>
                     <td colspan="3">
@@ -25,13 +24,13 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td colspan="3"  > 
-                   
+                    <td colspan="3">
                         <asp:DataGrid ID="DataGridTitle" runat="server" Width="100%" AutoGenerateColumns="False"
                             DataKeyField="id" OnSelectedIndexChanged="DataGrid1_SelectedIndexChanged" HeaderStyle-Font-Bold="true">
                             <Columns>
-                                <asp:BoundColumn  DataField="id" HeaderText="ID" ItemStyle-ForeColor="Blue" ItemStyle-Width="30px"></asp:BoundColumn>
-                                <asp:BoundColumn DataField="title" HeaderText="标题" ></asp:BoundColumn>                                
+                                <asp:BoundColumn DataField="id" HeaderText="ID" ItemStyle-ForeColor="Blue" ItemStyle-Width="30px">
+                                </asp:BoundColumn>
+                                <asp:BoundColumn DataField="title" HeaderText="标题"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="author" HeaderText="咨询者" ItemStyle-Width="100px"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="province_from" HeaderText="地域" ItemStyle-Width="150px">
                                 </asp:BoundColumn>
@@ -44,27 +43,26 @@
                                 <asp:ButtonColumn Text="删除" CommandName="Delete" ItemStyle-Width="50px"></asp:ButtonColumn>
                             </Columns>
                         </asp:DataGrid>
-                       
                     </td>
                 </tr>
             </tbody>
         </table>
         <br />
-        <table align="center" >
-        <tbody>
-            <tr valign="top">
-                <td>
-                    <webdiyer:AspNetPager ID="AspNetPager1" runat="server" OnPageChanged="AspNetPager1_PageChanged"
-                        CurrentPageButtonPosition="Center" CustomInfoHTML="第%CurrentPageIndex%页，共%PageCount%页，每页%PageSize%条"
-                        FirstPageText="首页" LastPageText="尾页" LayoutType="Table" NextPageText="下一页" PageIndexBoxType="DropDownList"
-                        PagingButtonLayoutType="Span" PrevPageText="上一页" ShowCustomInfoSection="Left"
-                        SubmitButtonText="Go" TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" UrlPaging="true">
-                    </webdiyer:AspNetPager>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-        <table id="Table2" cellspacing="0" cellpadding="0" width="800" align="left" border="1">
+        <table align="center">
+            <tbody>
+                <tr valign="top">
+                    <td>
+                        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" OnPageChanged="AspNetPager1_PageChanged"
+                            CurrentPageButtonPosition="Center" CustomInfoHTML="第%CurrentPageIndex%页，共%PageCount%页，每页%PageSize%条"
+                            FirstPageText="首页" LastPageText="尾页" LayoutType="Table" NextPageText="下一页" PageIndexBoxType="DropDownList"
+                            PagingButtonLayoutType="Span" PrevPageText="上一页" ShowCustomInfoSection="Left"
+                            SubmitButtonText="Go" TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" UrlPaging="true">
+                        </webdiyer:AspNetPager>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="Table2" cellspacing="0" cellpadding="0" width="800" align="left" border="1" style="margin-left:100px">
             <tbody>
                 <tr>
                     <td colspan="3" style="color: #CC3300; font-weight: bold;">
@@ -73,9 +71,9 @@
                     </td>
                 </tr>
             </tbody>
-             <tbody>
+            <tbody>
                 <tr>
-                    <td align="right"  class="guestreply">
+                    <td align="right" class="guestreply">
                         ID
                     </td>
                     <td>
@@ -83,7 +81,6 @@
                     </td>
                 </tr>
             </tbody>
-          
             <tbody>
                 <tr>
                     <td align="right" class="guestreply">
@@ -97,7 +94,7 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td align="right"  class="guestreply">
+                    <td align="right" class="guestreply">
                         <span class="guestreply">咨询者</span>
                     </td>
                     <td>
@@ -117,7 +114,7 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td align="right"  class="guestreply">
+                    <td align="right" class="guestreply">
                         联系方式
                     </td>
                     <td>
@@ -127,7 +124,7 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td align="right"  class="guestreply">
+                    <td align="right" class="guestreply">
                         邮件地址
                     </td>
                     <td>
@@ -137,7 +134,7 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td align="right"  class="guestreply">
+                    <td align="right" class="guestreply">
                         留言时间
                     </td>
                     <td>
@@ -147,7 +144,7 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td align="right"  class="guestreply">
+                    <td align="right" class="guestreply">
                         咨询者地域
                     </td>
                     <td>
@@ -157,7 +154,7 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td align="right" height="120"  class="guestreply">
+                    <td align="right" height="120" class="guestreply">
                         内容
                     </td>
                     <td height="120">
@@ -167,7 +164,7 @@
             </tbody>
             <tbody>
                 <tr>
-                    <td align="right"  class="guestreply">
+                    <td align="right" class="guestreply">
                         <span class="guestreply">关键词汇</span>
                     </td>
                     <td>
@@ -198,7 +195,7 @@
             <tbody>
                 <tr>
                     <td align="right">
-                        <asp:Button ID="reply_button" runat="server" Text="提交回复"  ForeColor="Blue"  Font-Bold="true"
+                        <asp:Button ID="reply_button" runat="server" Text="提交回复" ForeColor="Blue" Font-Bold="true"
                             Font-Size="Medium" OnClick="reply_Click"></asp:Button>
                     </td>
                     <td>
@@ -208,18 +205,16 @@
             </tbody>
             <tbody>
                 <tr>
-                <td align="right" class="guestreply">
+                    <td align="right" class="guestreply">
                         信息
                     </td>
-                    <td >                    
+                    <td>
                         <asp:Label ID="MSG" runat="server" ForeColor="Red" Font-Size="Small"></asp:Label>
                     </td>
                 </tr>
             </tbody>
         </table>
-    
+    </div>
     </form>
 </body>
-
-
 </html>

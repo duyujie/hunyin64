@@ -1,5 +1,6 @@
 <%@ Page Language="c#" Inherits="com.hujun64.news_show" CodeFile="news_show.aspx.cs"
-    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" %>
+    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false"  EnableEventValidation="False"
+    ViewStateEncryptionMode="Never" %>
 
 <%@ Register TagPrefix="uc1" TagName="header" Src="ascx/header.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="top" Src="ascx/top.ascx" %>
@@ -18,8 +19,9 @@
     <title>
         <%=  title + "_" + Total.Title%></title>
 </head>
-<body>
-    <form id="bodyForm" runat="server">
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0"
+    marginheight="0" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+    onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'> 
     <div align="center">
         <table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
             <uc1:top ID="top" runat="server"></uc1:top>
@@ -85,6 +87,6 @@
         </table>
     </div>
     <uc1:footer ID="footer" runat="server" />
-    </form>
+    
 </body>
 </html>

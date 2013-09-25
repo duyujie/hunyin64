@@ -22,11 +22,14 @@ namespace com.hujun64
                 Response.Status = "404 Not Found";
             }
             else
-                if (Session["err"] != null)
+                if (Session["err"] != null )
                 {
                     log.Error(Session["err"].ToString());
 
-                    UtilMail.SendMailAsync("网站错误报告", Session["err"].ToString(), Total.AdminMail, null);
+                    if (!Session["err"].ToString().Contains("此页的状态信息无效，可能已损坏"))
+                    {
+                        UtilMail.SendMailAsync("网站错误报告", Session["err"].ToString(), Total.AdminMail, null);
+                    }
 
                     Label1.Text = Session["err"].ToString();
                 }

@@ -1,17 +1,17 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="com.hujun64.top" CodeFile="top.ascx.cs" %>
- 
- 
-
- <div align="center">
+<%@ OutputCache Duration="60000" VaryByParam="*" Shared="True" %>
+<div align="center">
     <table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
-        <tr> 
-            <td height="80" style=" background-image:url(images/greenBg.jpg)">
+        <tr>
+            <td height="80" style="background-image: url(images/greenBg.jpg)">
                 <div align="center">
                     <table border="0" cellpadding="0" cellspacing="0" width="950" id="table2" height="117">
                         <tr>
                             <td valign="bottom">
                                 <div style="height: 60px; text-align: left;" class="TopTitle">
-                                 <img src="images/logoWhite.png" width="55px" height="58px" style ="vertical-align:top" />   <a href="http://www.hunyin64.com/"><%=Total.SiteName %></a></div>
+                                    <img src="images/logoWhite.png" width="55px" height="58px" style="vertical-align: top" />
+                                    <a href="http://www.hunyin64.com/">
+                                        <%=Total.SiteName %></a></div>
                                 <div>
                                     <div class="DivLogoRight">
                                         <div align="right">
@@ -34,7 +34,7 @@
                                 <div align="center">
                                     <table border="0" cellpadding="0" cellspacing="0" id="table3" height="40">
                                         <tr>
-                                        <td width="74" background="images/Nav_Tag1.png" class="Nav" align="center">
+                                            <td width="74" background="images/Nav_Tag1.png" class="Nav" align="center">
                                                 <a href="index.aspx"><strong>首页</strong></a>
                                             </td>
                                             <td width="4" align="center">
@@ -91,7 +91,7 @@
                                             </td>
                                             <td width="74" background="images/Nav_Tag1.png" class="Nav" align="center">
                                                 <a href="listitem.aspx?class_name=收费标准"><strong>收费标准</strong></a>
-                                            </td>                                         
+                                            </td>
                                         </tr>
                                     </table>
                                 </div>
@@ -102,4 +102,4 @@
             </td>
         </tr>
     </table>
-   
+</div>

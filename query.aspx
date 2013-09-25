@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="c#" Inherits="com.hujun64.query" CodeFile="query.aspx.cs" CodeFileBaseClass="com.hujun64.PageBase"
-    EnableViewState="false" %>
+    EnableViewState="false"  EnableEventValidation="False"
+    ViewStateEncryptionMode="Never"%>
 
 <%@ Register TagPrefix="webdiyer" Namespace="Wuqi.Webdiyer" Assembly="AspNetPager" %>
 <%@ Register TagPrefix="uc1" TagName="header" Src="ascx/header.ascx" %>
@@ -18,7 +19,9 @@
     <title>搜索 "<%=keywords%>" 结果 ></title>
 </head>
 <!--head区结束--位置-->
-<body>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0"
+    marginheight="0" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+    onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
     <form id="bodyForm" runat="server">
     <div align="center">
         <table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">

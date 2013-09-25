@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="c#" Inherits="com.hujun64.listitem" CodeFile="listitem.aspx.cs"
-    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" %>
+    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" EnableEventValidation="False"
+    ViewStateEncryptionMode="Never" %>
 
 <%@ Register TagPrefix="webdiyer" Namespace="Wuqi.Webdiyer" Assembly="AspNetPager" %>
 <%@ Register TagPrefix="uc1" TagName="header" Src="ascx/header.ascx" %>
@@ -9,21 +10,23 @@
 <%@ Register TagPrefix="uc1" TagName="track" Src="ascx/track.ascx" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>
-
 <head id="Head1" runat="server">
-    <meta http-equiv="Content-Language" content="zh-cn">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <meta name="keywords" content="<%=title+"" %>">
-    <meta name="description" content="<%=title+"" %>">
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="<%=title+"" %>" />
+    <meta name="description" content="<%=title+"" %>" />
     <link type="text/css" href="css/style.css" rel="stylesheet" />
     <uc1:header ID="header1" runat="server"></uc1:header>
-    <title><%=title + "_" + Total.Title%></title>
+    <title>
+        <%=title + "_" + Total.Title%></title>
 </head>
-<body>
+<body  topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0"
+    marginheight="0" oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+    onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
+    <uc1:top ID="top" runat="server"></uc1:top>
     <form id="bodyForm" runat="server">
     <div align="center">
         <table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
-            <uc1:top ID="top" runat="server"></uc1:top>
             <tr>
                 <td background="images/Header2.jpg" style="background-repeat: repeat-x; background-position: top"
                     height="800" valign="top">
@@ -93,7 +96,8 @@
                 </td>
             </tr>
         </table>
-        <uc1:footer ID="footer" runat="server" />
+    </div>
     </form>
+    <uc1:footer ID="footer" runat="server" />
 </body>
 </html>

@@ -105,35 +105,35 @@
                 <strong>Copyright @ hunyin64.com&nbsp;
                     <%=Total.SiteName %>
                     &nbsp; www.hunyin64.com</strong><br />
-                <table>
+                <table >
                     <tr>
-                        <td align="right">
+                        <td align="right"  class="Footer">
                             电话：
                         </td>
-                        <td>
+                        <td  class="Footer">
                             <%=Total.Mobile%>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right">
+                        <td align="right"  class="Footer">
                             地址：
                         </td>
-                        <td>
+                        <td  class="Footer">
                             上海市闸北区恒丰路500号洲际商务中心16楼
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="Footer">
                         </td>
-                        <td>
+                        <td class="Footer">
                             盈科(上海)律师事务所
                         </td>
                     </tr>
                     <tr>
-                        <td align="right">
+                        <td align="right" class="Footer">
                             备案号：
                         </td>
-                        <td>
+                        <td class="Footer">
                             沪ICP备09011496号
                         </td>
                     </tr>

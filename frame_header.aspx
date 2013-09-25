@@ -1,5 +1,6 @@
 <%@ Page Language="c#" Inherits="com.hujun64.frame_header" CodeFile="frame_header.aspx.cs"
-    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false" %>
+    CodeFileBaseClass="com.hujun64.PageBase" EnableViewState="false"  EnableEventValidation="False"
+    ViewStateEncryptionMode="Never" %>
 <%@ Register TagPrefix="uc1" TagName="header" Src="ascx/header.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="top" Src="ascx/top.ascx" %>
 <html>
